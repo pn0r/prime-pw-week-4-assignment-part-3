@@ -23,6 +23,7 @@ console.log('added: bushings', addItem('bushings'));
 console.log('added: consumables', addItem('consumables'));
 console.log('added: battery',addItem('battery'));
 console.log('added: pump', addItem('pump'));
+console.log('added: ldskfv', addItem("[]"));
 
 function empty(){
   basket.length=0;
@@ -59,6 +60,4 @@ empty();
 listItems();
 // Make sure to test all functions here in the JS file!
 // We want to see how you are testing your code!!!
-/*let basketFull = true;
-let detergentEmpty = false;
-*/
+
