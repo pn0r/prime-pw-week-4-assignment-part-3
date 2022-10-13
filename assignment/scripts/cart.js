@@ -14,11 +14,7 @@ function addItem(item){
 };
 
 function isFull(){
-  if(basket.length<maxItems){
-    return false;
-  }else {
-    return true;
-  }
+  return (basket.length < maxItems) ? false : true;
 };
 
 addItem('bearings');
@@ -46,18 +42,13 @@ function listItems(){
 listItems();
 
 function removeItem(item){
-  let match = false;
-  for (let i=0; i<basket.length; i++){
-    if (basket[i]==item){
-      match = true;}
-  }if(match){
+  if(basket.includes(item)){
     console.log('Items removed:',item),
     basket.splice(basket.indexOf(item),1)
   }else {
     console.log('Items removed: null')
   }
 };
-       
 
 removeItem('bushings');
 removeItem('adapter');
