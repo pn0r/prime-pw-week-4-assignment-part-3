@@ -7,9 +7,9 @@ console.log('Basket is full?:',isFull());
 
 function addItem(item){
   if (isFull()==false){basket.push(item)
-    console.log('Added item:',item,true);
+    return true;
   }else {
-    console.log('Added item:',item,false);
+    return false;
   }
 };
 
@@ -17,45 +17,44 @@ function isFull(){
   return (basket.length < maxItems) ? false : true;
 };
 
-addItem('bearings');
-addItem('axle');
-addItem('bushings');
-addItem('consumables');
-addItem('battery');
-addItem('pump');
+console.log('added: bearings', addItem('bearings'));
+console.log('added: axle', addItem('axle'));
+console.log('added: bushings', addItem('bushings'));
+console.log('added: consumables', addItem('consumables'));
+console.log('added: battery',addItem('battery'));
+console.log('added: pump', addItem('pump'));
 
 function empty(){
   basket.length=0;
 }
 
-
-
 console.log('Basket is full?:',isFull());
 
 function listItems(){
-  {console.log('BASKET:')
-  }for (let item of basket){
+  for (let item of basket){
     console.log(item)
   }
 };
 
 listItems();
 
+
 function removeItem(item){
   if(basket.includes(item)){
-    console.log('Items removed:',item),
     basket.splice(basket.indexOf(item),1)
+    return('Items removed:' + ' ' + item)
   }else {
-    console.log('Items removed: null')
+    return('Items removed: null')
   }
 };
 
-removeItem('bushings');
-removeItem('adapter');
-removeItem([1,2,3,4]);
+console.log(removeItem('bushings'));
+console.log(removeItem('adapter'));
+console.log(removeItem([1,2,3,4]));
+console.log(removeItem('string'));
 listItems();
 console.log('Basket is full?:',isFull());
-addItem('pulley');
+console.log('added pulley',addItem('pulley'));
 empty();
 listItems();
 // Make sure to test all functions here in the JS file!
